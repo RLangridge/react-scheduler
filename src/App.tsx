@@ -22,11 +22,11 @@ const App = () => {
       // }}
       // month={null}
       // day={null}
-      // day={{
-      //   startHour: 8,
-      //   endHour: 18,
-      //   step: 20,
-      // }}
+      day={{
+        startHour: 8,
+        endHour: 18,
+        step: 20,
+      }}
       // remoteEvents={async (query) => {
       //   await new Promise((res, rej) => {
       //     setTimeout(() => {
@@ -171,6 +171,8 @@ const App = () => {
       //     }, 1000);
       //   });
       // }}
+        onSelectEvent={(e) => console.log('e=', e)}
+        onSelectEmptyCell={() => {}}
     />
   );
 };

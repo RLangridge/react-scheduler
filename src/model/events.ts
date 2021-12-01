@@ -50,6 +50,27 @@ export const EVENTS = [
     admin_id: [3],
   },
   {
+    event_id: 99,
+    title: "Event 99",
+    start: new Date("2021 5 1 09:00"),
+    end: new Date("2021 5 1 09:40"),
+    admin_id: [3],
+  },
+  {
+    event_id: 101,
+    title: "Event 101",
+    start: new Date("2021 5 1 09:00"),
+    end: new Date("2021 5 1 09:40"),
+    admin_id: [3],
+  },
+  {
+    event_id: 100,
+    title: "Event 100",
+    start: new Date("2021 5 1 09:00"),
+    end: new Date("2021 5 1 09:40"),
+    admin_id: [4],
+  },
+  {
     event_id: 8,
     title: "Event 8",
     start: new Date("2021 5 2 13:00"),

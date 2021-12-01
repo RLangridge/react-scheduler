@@ -57,6 +57,8 @@ const Day = () => {
     fields,
     direction,
     locale,
+      onSelectEvent,
+      onSelectEmptyCell
   } = useAppState();
   const { startHour, endHour, step, cellRenderer } = day!;
   const START_TIME = setMinutes(setHours(selectedDate, startHour), 0);
@@ -213,6 +215,7 @@ const Day = () => {
                       startHour={startHour}
                       step={step}
                       direction={direction}
+                      onClickFunc={onSelectEvent}
                     />
                   </td>
                 </tr>
@@ -244,11 +247,17 @@ const Day = () => {
                             end,
                             height: CELL_HEIGHT,
                             onClick: () =>
-                              triggerDialog(true, {
-                                start,
-                                end,
-                                [field]: resource ? resource[field] : null,
-                              }),
+                            {
+                              if(!onSelectEmptyCell) {
+                                triggerDialog(true, {
+                                  start,
+                                  end,
+                                  [field]: resource ? resource[field] : null,
+                                })
+                              } else {
+                                onSelectEmptyCell(true, {start, end, [field]: resource ? resource[field] : null,})
+                              }
+                            },
                             [field]: resource ? resource[field] : null,
                           })
                         ) : (
@@ -258,7 +267,17 @@ const Day = () => {
                             end={end}
                             resourceKey={field}
                             resourceVal={resource ? resource[field] : null}
-                          />
+                            cellClickFunc={(b: boolean, p: { [p: string]: Date | string | number; start: Date; end: Date }) =>  {
+                              if(!onSelectEmptyCell) {
+                                triggerDialog(true, {
+                                  start,
+                                  end,
+                                  [field]: resource ? resource[field] : null,
+                                })
+                              } else {
+                                onSelectEmptyCell(b, {start, end, [field]: resource ? resource[field] : null,})
+                              }
+                            }}/>
                         )}
                       </td>
                     </tr>

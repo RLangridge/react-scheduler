@@ -199,5 +199,8 @@ export interface SchedulerProps {
     updatedEvent: ProcessedEvent,
     originalEvent: ProcessedEvent
   ): Promise<ProcessedEvent | void>;
+
+  onSelectEvent?(e: ProcessedEvent): any;
+  onSelectEmptyCell?(b: boolean, p: { [p: string]: Date | string | number; start: Date; end: Date }): any;
 }
 export interface Scheduler extends Partial<SchedulerProps> {}

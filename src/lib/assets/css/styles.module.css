@@ -5,7 +5,7 @@
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 .table td {
   vertical-align: top;
@@ -157,7 +157,7 @@
   }
 }
 
-/* 
+/*
 * Fix conflict with Tinymcs
 */
 .table:not([cellpadding]) td,

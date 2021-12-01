@@ -325,6 +325,7 @@ const Week = () => {
                               end={end}
                               resourceKey={field}
                               resourceVal={resource ? resource[field] : null}
+                              cellClickFunc={triggerDialog}
                             />
                           )}
                         </td>

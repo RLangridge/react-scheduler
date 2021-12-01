@@ -9,6 +9,7 @@ interface CellProps {
   resourceKey: string;
   resourceVal: string | number;
   children?: JSX.Element;
+  cellClickFunc(b: boolean, p: { [p: string]: Date | string | number; start: Date; end: Date }): any;
 }
 
 const Cell = ({
@@ -17,7 +18,7 @@ const Cell = ({
   end,
   resourceKey,
   resourceVal,
-  children,
+  children, cellClickFunc
 }: CellProps) => {
   const { triggerDialog, onDrop } = useAppState();
   const theme = useTheme();
@@ -26,13 +27,7 @@ const Cell = ({
     <div
       className={CSS.c_cell}
       style={{ height: height, width: "100%" }}
-      onClick={() => {
-        triggerDialog(true, {
-          start,
-          end,
-          [resourceKey]: resourceVal,
-        });
-      }}
+      onClick={() => cellClickFunc(true, { start, end, [resourceKey]: resourceVal})}
       onDragOver={(e) => {
         e.currentTarget.style.backgroundColor = alpha(
           theme.palette.secondary.main,

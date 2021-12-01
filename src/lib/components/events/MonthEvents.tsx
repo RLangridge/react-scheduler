@@ -118,6 +118,8 @@ const MonthEvents = ({
               multiday={differenceInDays(event.end, event.start) > 0}
               hasPrev={fromPrevWeek}
               hasNext={toNextWeek}
+              canDrag={true}
+              onClickFunc={(e) => console.log('e=', e)}
             />
           </div>
         );

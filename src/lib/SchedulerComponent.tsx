@@ -8,7 +8,11 @@ import { Month } from "./views/Month";
 import { Day } from "./views/Day";
 import CSS from "./assets/css/styles.module.css";
 
-const SchedulerComponent = () => {
+interface SchedulerComponentProps {
+  canNavigate: boolean
+}
+
+const SchedulerComponent = ({canNavigate} : SchedulerComponentProps) => {
   const { loading, view, dialog, direction } = useAppState();
 
   const renderViews = () => {
@@ -34,7 +38,7 @@ const SchedulerComponent = () => {
           </div>
         </div>
       )}
-      <Navigation />
+      { canNavigate && (<Navigation />)}
       <div className={CSS.outerTable}>
         <table className={`${CSS.table} ${CSS[`table_${direction}`]}`}>
           {renderViews()}

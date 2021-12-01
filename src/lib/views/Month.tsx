@@ -40,6 +40,7 @@ const Month = () => {
     resourceFields,
     fields,
     direction,
+    triggerDialog
   } = useAppState();
 
   const { weekStartOn, weekDays, startHour, endHour } = month!;
@@ -122,7 +123,7 @@ const Month = () => {
               end={end}
               resourceKey={field}
               resourceVal={resource ? resource[field] : null}
-            >
+              cellClickFunc={triggerDialog}>
               <Fragment>
                 <Avatar
                   style={{

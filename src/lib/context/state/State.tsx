@@ -45,6 +45,7 @@ const AppState = ({ initial, children }: AppProps) => {
     direction,
     loading,
     onEventDrop,
+      onSelectEvent
   } = initial;
   const [state, dispatch] = useReducer(stateReducer, initialState(initial));
 

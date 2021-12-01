@@ -27,6 +27,8 @@ interface EventItemProps {
   hasPrev?: boolean;
   hasNext?: boolean;
   showdate?: boolean;
+  canDrag?: boolean;
+  onClickFunc?(e: ProcessedEvent): any;
 }
 
 const EventItem = ({
@@ -34,7 +36,7 @@ const EventItem = ({
   multiday,
   hasPrev,
   hasNext,
-  showdate,
+  showdate, canDrag, onClickFunc
 }: EventItemProps) => {
   const {
     triggerDialog,
@@ -280,7 +282,11 @@ const EventItem = ({
         <ButtonBase
           onClick={(e) => {
             e.stopPropagation();
-            triggerViewer(e.currentTarget);
+            if(onClickFunc) { //If a click function is defined, act on it
+              onClickFunc(event);
+            } else {
+              triggerViewer(e.currentTarget);
+            }
           }}
           disabled={event.disabled}
           style={{
@@ -293,7 +299,7 @@ const EventItem = ({
             style={{
               height: "100%",
             }}
-            draggable
+            draggable={canDrag}
             onDragStart={(e) => {
               e.stopPropagation();
               e.dataTransfer.setData("text/plain", `${event.event_id}`);

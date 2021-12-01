@@ -54,7 +54,7 @@ export const defaultProps = {
     endHour: 17,
     step: 60,
   },
-  view: "week",
+  view: "day",
   selectedDate: new Date(),
   events: [],
   remoteEvents: undefined,

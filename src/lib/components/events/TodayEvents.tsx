@@ -13,6 +13,7 @@ interface TodayEventsProps {
   minuteHeight: number;
   cellHeight: number;
   direction: string;
+  onClickFunc?(e: ProcessedEvent): any;
 }
 const TodayEvents = ({
   todayEvents,
@@ -21,7 +22,7 @@ const TodayEvents = ({
   step,
   minuteHeight,
   cellHeight,
-  direction,
+  direction, onClickFunc
 }: TodayEventsProps) => {
   const crossingIds: Array<number | string> = [];
   return (
@@ -65,7 +66,7 @@ const TodayEvents = ({
                 : "",
             }}
           >
-            <EventItem event={event} />
+            <EventItem event={event} canDrag={true} onClickFunc={onClickFunc}/>
           </div>
         );
       })}
