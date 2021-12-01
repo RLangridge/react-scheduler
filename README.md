@@ -12,13 +12,13 @@ A fork of https://github.com/aldabil21/react-scheduler
 ## Installation
 
 ```jsx
-npm i @aldabil/react-scheduler
+npm i git+https://github.com/RLangridge/react-scheduler.git
 ```
 
 ## Usage
 
 ```jsx
-import { Scheduler } from "@aldabil/react-scheduler";
+import { Scheduler } from "@rlangridge/react-scheduler";
 ```
 
 ## Example
