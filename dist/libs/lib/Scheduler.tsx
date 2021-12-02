@@ -13,4 +13,4 @@ const Scheduler = (props: SchedulerProps) => {
 
 Scheduler.defaultProps = defaultProps;
 
-export default Scheduler
+export { Scheduler };

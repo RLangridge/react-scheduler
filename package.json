@@ -2,7 +2,7 @@
   "name": "@rlangridge/react-scheduler",
   "version": "2.0.0",
   "description": "React scheduler component based on Material-UI & date-fns, forked from https://github.com/aldabil21/react-scheduler",
-  "main": "./dist/Scheduler.js",
+  "main": "./dist/Scheduler.mjs",
   "//types": "./dist/index.d.ts",
   "files": [
     "/dist/**/*"
