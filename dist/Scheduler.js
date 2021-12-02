@@ -1,3 +1,3 @@
-import { Scheduler } from "../src/lib/Scheduler";
+import { Scheduler } from './libs/lib/Scheduler'
 
 export default Scheduler
