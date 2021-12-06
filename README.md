@@ -4,7 +4,7 @@
 [![Twitter URL](https://img.shields.io/twitter/url?label=%40aldabil&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ffollow%3Fscreen_name%3Daldabil21)](https://twitter.com/intent/follow?screen_name=aldabil21)
 
 ## Information
-A fork of https://github.com/aldabil21/react-scheduler
+A fork of https://github.com/aldabil21/react-scheduler. Please note that this fork may not work. Not a web developer so having a nightmare of a time getting this thing running.
 
 ## Changes
 - Can now customize what happens when clicking on a cell
@@ -18,7 +18,7 @@ npm i git+https://github.com/RLangridge/react-scheduler.git
 ## Usage
 
 ```jsx
-import { Scheduler } from "@rlangridge/react-scheduler";
+import { Scheduler } from "@hightype/react-scheduler";
 ```
 
 ## Example
